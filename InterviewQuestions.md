@@ -27,6 +27,9 @@ On Test Data:
 As the order of the polynomail increases the MSE increases.It is because of the noise often called as irreduceable error. **y(x) + noise**
 <img src="images\test error.png">
 
+We can detect the best R-square value for model by using different values of degree in polynomila regression.
+The degree giving best R-square value is best for our model.
+<img src="images\polynomial reg test for best r sq value.png">
 
 ___
 
@@ -34,7 +37,7 @@ ___
 
 Ridge regression is a regression that is employed in a Multiple regression model when Multicollinearity occurs. Multicollinearity is when there is a strong relationship among the independent variables. Ridge regression is very common with polynomial regression
 **Ridge Regression prevents overfitting.**
-Here we introduce a parameter called *alpha*. The higher the value of *alpha* the coefficients value decrease closer to 0. There is some important range of *alpha* values as follow:
+Here we introduce a parameter called *alpha*.This is one of the **hyperparameter** that can effect our model's performance. The higher the value of *alpha* the coefficients value decrease closer to 0. There is some important range of *alpha* values as follow:
 0
 0.001
 0.01
@@ -46,3 +49,11 @@ To choose best *alpha* value for our model note the value of R-square on test da
 while changing *alpha* values on every cycle.
 Then pick the *alpha* value which generates highest R-square value for our model. 
 Sometimes the problem of overfitting worsens when we have lot of features and what happens is that Rsquare value decreases on train data with same *alpha* value but increases on validation set.But checking the same *alpha* value on test set can perform well.
+___
+
+## Q : What is Grid Search?
+**Grid search is a time-efficient tuning technique that exhaustively computes the optimum values of hyperparameters performed on specific parameter values of estimators.**.
+Grid Search allows us to scan through multiple free parameters with few lines of code. Parameters like the alpha term discussed in the previous video are not part of the fitting or training process. These values are called hyperparameters. Scikit-learn has a means of automatically iterating over these hyperparameters using cross-validation. This method is called Grid Search. Grid Search takes the model or objects you would like to train and different values of the hyperparameters. It then calculates the mean square error or R-squared for various hyperparameter values, allowing you to choose the best values.
+### Grid search in sklearn
+<img src='images\Grid Search.png' />
+<img src='images\Grid-Search-result.png' />
